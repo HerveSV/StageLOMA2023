@@ -1,0 +1,100 @@
+\documentclass{report}
+
+\usepackage{graphicx} % Required for inserting images
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{setspace}
+
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{multicol}
+\usepackage{titlesec}
+
+\usepackage[utf8]{inputenc}
+\usepackage[
+            backend=biber,
+            style=numeric,
+            %langid=french,
+            sorting=none,
+            ]{biblatex}
+\DeclareNameAlias{author}{last-first}
+
+% to ensure citations follow french convention
+\usepackage{csquotes}
+
+
+\usepackage{breqn}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{comment}
+
+
+\usepackage[hidelinks, colorlinks=true, allcolors=blue]{hyperref}
+
+
+\usepackage{float}
+
+\edef\restoreparindent{\parindent=\the\parindent\relax}
+\usepackage{parskip}
+
+\captionsetup{belowskip=0pt}
+
+
+\usepackage{amsmath}
+%\usepackage{amsfonts}
+\usepackage{siunitx}
+\usepackage{physics}
+
+
+\geometry{a4paper, margin=1.9cm}
+
+% removes large overhead margin from chapter header
+\titlespacing{\chapter}{0pt}{-30pt}{10pt}
+
+% removes "Chapter N" text
+\titleformat{\chapter}[display]
+  {\huge\bfseries}
+  {}
+  {0pt}
+  {\thechapter.\ }
+
+
+\titleformat{name=\chapter,numberless}[display]
+  {\huge\bfseries}
+  {}
+  {0pt}
+  {}
+
+
+
+
+
+
+\begin{document}
+
+Lalalala
+
+\begin{align}
+    \label{eq:O_1}
+    x_0'' + x_0 &= 0  \\
+    \label{eq:O_eps}
+    x_1'' + x_1 &= -2\omega_1 x_0'' - (x_0^2 - 1)x_0' \\
+    \label{eq:O_eps2}
+    x_2'' + x_2 &= -2\omega_2 x_1'' - (2\omega_2 + \omega_1^2)x_0'' - (x_0^2 - 1)x_1' - 2x_0 x_1 x_0' - \omega_1(x_0^2 - 1)x_0'
+\end{align}
+
+%A cause de la periodicité de notre solution, on peut, sans perdre de géneralité, imposer les conditions initiales suivantes.
+
+On peut constater que si on impose des conditions initiales arbitraires $x(0, \epsilon)=A,  \, x'(0, \epsilon)=B$, pour que \eqref{eq:x_eps} soit valide pour tout $\epsilon$ il faut obligatoirement que :
+\begin{equation}
+    x_0(0) = A,\, x_0'(0) = B
+    \qquad
+    x_k(0) = x_k'(0) = 0 \; \forall k > 0
+\end{equation}
+
+On commence donc par résoudre \eqref{eq:O_1} yeet
+
+\end{document}

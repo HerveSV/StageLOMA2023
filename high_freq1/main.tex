@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{breqn}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{comment}
+\usepackage{subcaption}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{placeins}
+
+\title{Retirer second membre à haute fréquence}
+\author{Hervé SV}
+\date{Juin 2023}
+
+\begin{document}
+
+\maketitle
+
+On se donne un version simplifié et linéairisé de l'équation pour l'oscillateur de Duffing :
+
+\[ \dot{z}(t) -i (\omega_0 - \omega)z + \gamma_m z = \frac{f_0}{2} (1 + e^{-i2\omega t}) \]
+
+On la sépare en deux
+
+\begin{dmath}
+    \label{eq:1}
+    \dot{z}(t) -i (\omega_0 - \omega)z + \gamma_m z = \frac{f_0}{2}e^{-i2\omega t}
+\end{dmath}
+
+\begin{dmath}
+    \label{eq:2}
+    \dot{z}(t) - i (\omega_0 - \omega)z + \gamma_m z = \frac{f_0}{2}
+\end{dmath}
+
+On suppose que $z_1(t)$ (solution de (\ref{eq:1})) soit de la forme :
+\[ z_1(t) = Ae^{-i2wt} \]
+Donc l'équation devient :
+\[ (-i2\omega - i(\omega_0 - \omega) + \gamma_m)A = \frac{f_0}{2} \]
+Où
+\[ A = \frac{1}{-i2\omega - i(\omega_0 - \omega) + \gamma_m}\frac{f_0}{2}  \]
+
+L'équation (\ref{eq:2}) est beaucoup plus simple, on prend $z_2(t)$ constant
+\[ z_2(t) = A' \]
+\[ (- i(\omega_0 - \omega) + \gamma_m)A' = \frac{f_0}{2} \]
+\[ A' = \frac{1}{- i(\omega_0 - \omega) + \gamma_m}\frac{f_0}{2}  \]
+
+Dans le cas où $\omega >> \gamma_m$ et que $\omega \approx \omega_0$, on a aussi $\omega >> (\omega_0 - \omega)$. Donc :
+\[ |A| \approx \frac{1}{i2\omega}\frac{f_0}{2}  << \frac{1}{- i(\omega_0 - \omega) + \gamma_m}\frac{f_0}{2} = A' \]
+
+\[ |\frac{A}{A'}| \approx |\frac{- i(\omega_0 - \omega) + \gamma_m}{i2\omega}|  << 1 \]
+
+$z_1(t)$ est donc négligeable par rapport à $z_2(t)$, ce qu'on peut prendre ne compte dans l'équation d'origine en éliminant le terme $\frac{f_0}{2}e^{-i2\omega t}$
+
+
+
+
+
+
+
+
+
+
+\end{document}
